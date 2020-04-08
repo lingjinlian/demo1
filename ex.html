@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset=utf-8 />
+		<title>梦想</title>
+		<link rel="icon" type="image/x-icon" href="favicon.ico">
+		<link rel="stylesheet" href="css/st.css" type="text/css" media="screen" title="no title" charset="utf-8">
+		
+		<script src="js/jquery-1.4.min.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script src="js/flux.js" type="text/javascript" charset="utf-8"></script>
+			<link rel="stylesheet" type="text/css" href="css/hd/demo.css" />
+	<link rel="stylesheet" type="text/css" href="css/hd/component.css" />
+	<link rel="stylesheet" href="css/home.css">
+	<link rel="stylesheet" href="css/icon.css">
+	<script src="js/hd/modernizr.custom.js"></script>
+	
+		
+		<script type="text/javascript" charset="utf-8">
+			$(function(){
+				if(!flux.browser.supportsTransitions)
+					alert("Flux Slider requires a browser that supports CSS3 transitions");
+					
+				window.f = new flux.slider('#slider', {
+					pagination: false,
+					controls: false,
+					transitions: ['explode', 'tiles3d', 'bars3d', 'cube', 'turn'],
+					autoplay: false
+				});
+				
+				$('.transitions').click(function(event){
+					event.preventDefault();
+					window.f.next($(event.target).data('transition'), $(event.target).data('params'));
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<header id="header" class="">
+	<div class="container">
+		<div class="global-nav">
+			<button class="navbar-toggle">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="brand" href="index.html">起航地</a>
+			<nav class="navbar">
+				<ul class="nav">
+				<li class="active">
+						<a href="index.html" class="home-current">首页</a>
+					</li>
+					<li class="">
+						<a href="food.html">精彩校园</a>
+					</li>
+					<li class="">
+						<a href="join.html">燃梦校园</a>
+					</li>
+					<li class="">
+						<a href="profile.html">起航历程</a>
+					</li>
+					<li class="">
+						<a href="about.html">飞吧梦想</a>
+					</li>
+					<li class="">
+						<a href="new4.html">梦想足迹</a>
+					</li>
+					<li class="pc-nav-char">
+						<a href="activity.html">同路人</a>
+					</li>
+					<li class="">
+						 <a href="tupian.html">旋转梦想</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</header>
+		<div><a href="index.html">返回</a></div>
+		<section class="container"><br><br><br>
+			<h1 style="color: yellow;">有你，真好</h1>
+			<h2>梦想起航</h2>
+			<div id="slider" style="position: relative;  background-color: #302a34;">
+				<img src="images/g6.jpg" alt="" />
+				<img src="images/g7.jpg" alt="" />
+				<img src="images/t1.jpg" alt="" />
+				<img src="images/t1.jpg" alt="" />
+			</div>
+			<ul class="transitions">
+				<li><button type="button" data-transition="explode" data-params='{"rows": 4}'>饭堂</button></li>
+				<li><button type="button" data-transition="tiles3d" data-params='{"columns": 6}'>燃梦</button></li>
+				<li><button type="button" data-transition="bars3d">奔跑</button></li>
+				<li><button type="button" data-transition="cube">青春</button></li>
+				<li><button type="button" data-transition="turn">努力</button></li>
+			</ul>
+		</section>
+		<script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?05e4a554b37e54a1436450128ce7173c";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+	</script>
+
+	</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+   <meta charset="utf-8">
+    <title>我的梦想起航-你一定要来这</title>
+    <meta name="keywords" content="广西城市职业学院是一所经广西壮族自治区人民政府批准，国家教育部备案，由广西教育厅主管，具有独立颁发国家承认学历文凭资格的新型的综合性高校。">
+    <meta name="description" content="工业机器人技术、无人机应用专业，工业设计（3D打印技术）、产品艺术设计、新能源汽车、学前教育建设工程管理、汽车检测与维修技术等54个专业，涉及经济、文学、理学、管理、外语、艺术等学科门类。">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            width: 700px;
+            height:500px;
+            border: 1px 1px solid #000;
+            margin:30px auto;
+            overflow: hidden;
+            border-color:#D8BFD8;
+        }
+        .oo{float: right;}
+        ul {
+            list-style: none;
+            width: 600px #000;
+            margin-left: -1px;
+            overflow: hidden;
+        }
+        li {
+            width:100px;
+            height: 30px;
+            float: left;
+            border-left: 1px solid ;
+
+            background-color: purple;
+            cursor: pointer;
+            text-align: center;
+            line-height: 30px;
+        }
+        span {
+            display: block;
+            width: 800px;
+            height: 500px;
+           font: 700 100px/370px "simsun";
+            text-align: center;
+            /*background-color: pink;*/
+        }
+
+        .current {
+            background-color: yellow;
+        }
+        .hide {
+            display: none;
+        }
+        .show {
+            display: block;
+        }
+        .tt{
+            background-image: url(img/bj/yy.jpg);
+            background-position: 100%;
+           
+        }
+      
+    </style>
+</head>
+<body>
+    <h2><a href="index.html"  style="position:absolute;right: 80%; color: black;">新闻</a></h2>
+     <h2><a href="news.html" style="position: relative;left: 80%; color: black;">返回</a></h2>
+    <center><h1>你一定要来这里</h1></center>
+    <h2>这是我梦想起航的原因：</h2><br>
+    <p>&nbsp;&nbsp;因为广西城市职业学院是一所经广西壮族自治区人民政府批准，国家教育部备案，由广西教育厅主管，具有独立颁发国家承认学历文凭资格的新型的综合性高校。<br>不仅仅如此，身为一个吃货怎么可以错过“城院”里舌尖上的享受？因为：</p>
+    <ul>    
+<ol>&nbsp;&nbsp;&nbsp;这里食堂菜色丰富、口感极佳，深受城院人青睐。</ol>
+<ol>&nbsp;&nbsp;&nbsp;这里美食街坐拥南北西东全国美食，口味地道分量足。</ol>
+<ol>&nbsp;&nbsp;&nbsp;这里地处水果之乡，杨梅荔枝龙眼榴莲各类瓜果,各类冰爽甜点让你吃到爽</ol>
+</ul><br>
+&nbsp;&nbsp;尤其重要的是，我们学校本着“以学生为中心”，在图书馆的各个楼层设立了“读书区”，为学子们提供了一个极为安静专注的阅读环境。闲暇之余，我们还可以去一楼喝喝咖啡，舒缓下身心。<br>
+<h2>有一个地方，选择它的理由有千千万，却无法完整说出。</h2>
+<div class="tt">
+    <div class="box">
+        <ul class="oo">
+            <li>高颜值美景</li>
+            <li>诱人的美食</li>
+            <li>五星级图书馆</li>
+            <li>齐全的实训室</li>
+            <li>社团的活动</li>
+        </ul>
+        <span><img src="img/bj/ba.jpg"></span>
+        <span><img src="img/bj/ms.jpg"></span>
+        <span><img src="img/bj/qw.jpg"></span>
+        <span><img src="img/bj/qq.jpg"></span>
+        <span><img src="img/bj/hd.jpg"></span>
+    </div>
+</div>
+<p>&nbsp;&nbsp;城院很注重学生教学质量，每个专业的实训室是必不可少的，所以你还会担心学不到专业知识么？不存在的。</p>
+<p>&nbsp;&nbsp;身为一个城院人，不具备十八般武艺谈何撩妹？小编偷偷告诉你，漂亮的妹子都喜欢有才艺的男生哦，不仅要帅，还会耍酷，哇，想想就好激动。</p>
+<h2>我是城院学子，我在这放飞自我，追求青春梦想,这里是大城院，选择了它的人就不会后悔，因为它真的很不一样</h2>
+    <script>
+
+        var liArr = document.getElementsByTagName("li");
+        var spanArr = document.getElementsByTagName("span");
+
+        for(var i=0;i<liArr.length;i++){
+//            liArr[i].index = i;
+            liArr[i].setAttribute("index",i);
+
+            liArr[i].onmouseover = function () {
+                for(var j=0;j<liArr.length;j++){
+//                    liArr[j].className = "";
+//                    spanArr[j].className = "hide";
+                    liArr[j].setAttribute("class","");
+                    spanArr[j].setAttribute("class","hide");
+                }
+
+//                this.className = "current";
+//                spanArr[this.index].className = "show";
+                this.setAttribute("class","current");
+                spanArr[this.getAttribute("index")].setAttribute("class","show");
+            }
+        }
+
+
+
+
+
+    </script>
+
+
+
+</body>
+</html>

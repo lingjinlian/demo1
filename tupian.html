@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>梦想</title>
+	<script type="text/javascript" src="js/jquery-latest.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+ 
+	$("a.switch_thumb").toggle(function(){
+	  $(this).addClass("swap"); 
+	  $("ul.display").fadeOut("fast", function() {
+	  	$(this).fadeIn("fast").addClass("thumb_view"); 
+		 });
+	  }, function () {
+      $(this).removeClass("swap");
+	  $("ul.display").fadeOut("fast", function() {
+	  	$(this).fadeIn("fast").removeClass("thumb_view");
+		});
+	}); 
+
+});
+</script>
+<style type="text/css">
+*{margin:0;padding:0;list-style-type:none;}
+a,img{border:0;}
+body{font:12px/180% Arial, Helvetica, sans-serif, "新宋体";background:#111;}
+.container{width:758px;margin:50px auto;overflow:hidden;}
+/* display */
+ul.display{float:left;width:756px;padding:0;list-style:none;border-top:1px solid #333;border-right:1px solid #333;background:#222;}
+ul.display li{float:left;width:754px;padding:10px 0;border-top:1px solid #111;border-right:1px solid #111;border-bottom:1px solid #333;border-left:1px solid #333;}
+ul.display li a{color:#e7ff61;text-decoration:none;}
+ul.display li .content_block{padding:0 10px;}
+ul.display li .content_block h2{padding:5px;font-weight:normal;font-size:1.7em;}
+ul.display li .content_block p{padding:5px 5px 5px 245px;font-size:1.2em;color:#fff;}
+ul.display li .content_block a img{padding:5px;border:2px solid #ccc;background:#fff;margin:0 15px 0 0;float:left;}
+ul.thumb_view li{width:250px;}
+ul.thumb_view li h2{display:inline;}
+ul.thumb_view li p{display:none;}
+ul.thumb_view li .content_block a img{margin:0 0 10px;}
+a.switch_thumb{width:122px;height:26px;line-height:26px;padding:0;margin:10px 0;display:block;background:url(images/switch.gif) no-repeat;outline:none;text-indent:-9999px;}
+a:hover.switch_thumb{filter:alpha(opacity=75);opacity:.75;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=75)";}
+a.swap{background-position:left bottom; }
+</style>
+	
+	<link rel="stylesheet" type="text/css" href="css/htmleaf-demo.css">
+	<link rel="stylesheet" href="css/main.css">
+	 <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/home.css">
+   
+ <link rel="stylesheet" href="css/styll.css">
+<link rel="stylesheet" type="text/css" href="demo.css">
+<link rel="stylesheet" href="css/animate.css">
+   <script src="css/jquery-1.8.3.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/windy.css" />
+		<link rel="stylesheet" type="text/css" href="css/dem.css" />
+		<link rel="stylesheet" type="text/css" href="css/style2.css" />
+		<script type="text/javascript" src="js/modernizr.custom.79639.js"></script>
+		<noscript><link rel="stylesheet" type="text/css" href="css/noJS.css" /></noscript>
+   <style type="text/css">
+   * { margin: 0; padding: 0 }
+body { background: #DDD6CC; font: 12px 宋体; color: #3F3E3C; line-height: 1.5; }
+img { border: 0; vertical-align: middle }
+p { display: block; }
+ul { list-style: none; }
+a { color: #a6a6a6; text-decoration: none; transition: All 0.5s ease; -webkit-transition: All 0.5s ease; -moz-transition: All 0.5s ease; -o-transition: All 0.5s ease; }
+a:hover { color: #000; }
+.blank { height: 5px; overflow: hidden; width: 100%; margin: auto; clear: both }
+/* nav */
+header { width: 100%; height: 43px; background: -webkit-gradient(linear, 78% 100%, 78% 41%, from(#EFEEEC), to(#fff)); box-shadow: #D0C9C0 2px 2px 3px }
+header nav { margin: 0 auto; width: 980px; text-align: center }
+header nav ul li { line-height: 43px; display: block }
+header nav ul li a { color: #484848; float: left; padding: 0 20px; margin-right: 2px; }
+header nav ul li a:hover, #nav_current { color: #fff; background: #F16E50; transform: skew(-20deg); -webkit-transform: skew(-20deg); -moz-transform: skew(-20deg); -o-transform: skew(-20deg); }
+
+        body {
+    background: black;
+    perspective:2000px;
+}
+#box {
+    width:300px;
+    height:50px;
+    margin:200px auto;
+    position:relative;
+    transform-style:preserve-3d;
+}
+#box img {
+    width:100%;
+    height:100%;
+    position:absolute;
+    -webkit-box-reflect:below 10px;
+}
+.t{text-align: center;color: white;}
+ 
+    </style>
+  <script type="text/javascript">
+   var txtAnim = {
+    len: 0,
+    txtDom: "",
+    arrTxt: [],
+    init: function(obj) {
+     this.obj = obj;
+     this.txtDom = obj.innerHTML.replace(/\s+/g, "");
+     this.len = this.txtDom.length;
+     obj.innerHTML = "";
+     this.addDom();
+    },
+    addDom: function() {
+     for (var i = 0; i < this.len; i++) {
+      var spanDom = document.createElement("span");
+      spanDom.innerHTML = this.txtDom.substring(i, i + 1);
+      this.obj.appendChild(spanDom);
+      this.arrTxt.push(spanDom);
+     };
+     for (var j = 0; j < this.len; j++) {
+      this.arrTxt[j].style.position = "relative";
+     };
+     this.strat();
+    },
+    strat: function() {
+     for (var i = 0; i < this.len; i++) {
+      this.arrTxt[i].onmouseover = function() {
+       this.stop = 0;
+       this.speed = -1;
+       var $this = this;
+       this.timer = setInterval(function() {
+        $this.stop += $this.speed; //0 += -1
+        if ($this.stop <= -20) {
+         $this.speed = 1;
+        }
+        $this.style.top = $this.stop + "px";
+        if ($this.stop >= 0) {
+         clearInterval($this.timer)
+         $this.style.top = 0 + "px";
+        };
+       },
+       15);
+      };
+     }
+    }
+   }
+   var txtDom = document.getElementById("txtDom");
+   txtAnim.init(txtDom);
+  </script>
+	
+</head>
+<body>
+	<div class="container">
+        <div class="global-nav">
+            <button class="navbar-toggle">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="index.html">起航地</a>
+            <nav class="navbar">
+                <ul class="nav">
+                    <li>
+                        <a href="index.html" class="home-current">首页</a>
+                    </li>
+                    <li class="">
+                        <a href="food.html">精彩校园</a>
+                    </li>
+                    <li class="">
+                        <a href="join.html">燃梦校园</a>
+                    </li>
+                    <li class="">
+                        <a href="profile.html">起航历程</a>
+                    </li>
+                    <li class="">
+                        <a href="about.html">飞吧梦想</a>
+                    </li>
+                    <li class="">
+                        <a href="new4.html">梦想足迹</a>
+                    </li>
+                    <li class="pc-nav-char">
+                        <a href="activity.html">同路人</a>
+                    </li>
+                    <li class="active">
+                        <a href="tupian.html">旋转梦想</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+ <article>
+	<p id="text">
+    榜样的力量是无穷的。一个人、一个故事、一段话语,看似平凡简单，却能激励更多的人扬帆起航追逐梦想
+   要是没有错误和失败，你就不会学到东西；要是没有痛苦，你就不会长大。
+   一旦你明白了这些，你就知道了一切事情都是为了某种目的而发生。 
+   所以不要紧张或者认为生活不公平，因为一切事情都有原因，只有时间能诉说教会了我们什么。
+ </p>
+	<button id="reset" data-bound="true" style="position: relative;left:50%;text-align: center; font-size: 13px;">筑梦</button>
+</article>
+   	<div class="htmleaf-container">
+		<div id="first" class="paralasic" data-paralasic="0.5">
+		    <h1 class="title" style="color: black;font-size: 40px;">青春.梦想</h1>
+		</div>
+		<div class="htmleaf-header" >
+			<h1 style="color: red;">让我的梦想起航<span style="color: yellow;">放飞青春，砥砺前行</span></h1>
+			
+		</div>
+		<div class="container" style="color: #dfd1b5; text-align: center;">
+			<div class="row">
+				<p>正是因为拥有了梦想，又坚定了实现梦想的信念，许许多多不畏艰难的人们前赴后继，使一个个不可能变为现实。<br>人类为了美丽的梦想，从未停止过艰难的求索<<br>
+				<div class="container">
+	<a href="javascript:void(0);" class="switch_thumb">Switch Thumb</a> 
+	<ul class="display">
+		<li>
+			<div class="content_block">
+				<a href="#"><img src="img/nav/qw-1.jpg" alt="" /></a>
+				<h2><a href="#">放飞</a></h2>
+				<p>如果你的信念还站立的话，那么没有人能使你倒下。 ——马丁·路德金 蝶在沉默了一冬之后，积蓄了全身的力量，终于把飞的梦想变成现实；依米花在沉默了五年之后，爆发了自己毕生的心血。树立信念，放飞梦想，你将会拥有一个更加灿烂的明天。让梦想飞翔，让信念开花。从远处随便拈来一朵云彩，将旅途的脚步停歇，只为追寻，那初生的阳光而不曾停下脚步。 旅途的劳顿充斥着艰辛，但是心灵的追寻却不曾停止。固有夸父追日，累到沧海变幻乱世桃园。
+</p>
+			</div>
+		</li>
+		<li>
+			<div class="content_block">
+				<a href="#"><img src="img/nav/qw-3.jpg" alt="" /></a>
+				<h2><a href="#">青春</a></h2>
+				<p>，终于把花的芬芳吐露给大家。坚定信念，放飞梦想，你就主宰了自己的世界。 “天将降大任于是人也，必先苦其心志，劳其筋骨，饿其体肤，空乏其身……”孙膑在忍受了挖去膝骨的酷刑之后，忍耐着、坚持着，执着地用心完成一部流传千古的兵书《孙膑兵法》。孙膑，有多少人为你的学富五车所折服，有多少人被你的智谋所吸引。</p>
+			</div>
+		</li>
+		<li>
+			<div class="content_block">
+				<a href="#"><img src="img/nav/qw-4.jpg" alt="" /></a>
+				<h2><a href="#">梦想</a></h2>
+				<p>你在沉默中靠着坚定的信念，把自己的梦想放飞到蓝天中。放飞梦想，别忘了你的坚定信念！树立信念，放飞梦想，你将能随它一起到达美丽的地方。</p>
+			</div>
+		</li>
+		<li>
+			<div class="content_block">
+				<a href="#"><img src="img/nav/qw-5.jpg" alt="" /></a>
+				<h2><a href="#">追求</a></h2>
+				<p>树立信念，放飞梦想，你将会拥有一个更加灿烂的明天。让梦想飞翔，让信念开花。从远处随便拈来一朵云彩，将旅途的脚步停歇，只为追寻，那初生的阳光而不曾停下脚步。 旅途的劳顿充斥着艰辛，但是心灵的追寻却不曾停止。固有夸父途的劳顿充斥着艰辛，但是心灵的追寻却不曾停止。固有夸父追日，累到沧海变幻乱世桃园。。</p>
+			</div>
+		
+		</li>
+		<li>
+			<div class="content_block">
+				<a href="#"><img src="img/nav/qw-6.jpg" alt="" /></a>
+				<h2><a href="#">卓越</a></h2>
+				<p>
+Never say die ,不平庸，不盲从，不怕错敢去做是我们的时代特征，就让我们扬起梦想的风帆，吹响奋斗的号角，向前吧！去改写自己的命运，去创造自己的奇迹吧！</p>
+			</div>
+		</li>
+		
+		<li>
+			<div class="content_block">
+				<a href="#"><img src="img/nav/qw-2.jpg" alt="" /></a>
+				<h2><a href="#">人生</a></h2>
+				<p>Nothing is impossible to a willing heart！长风破浪会有时，直挂云帆济沧海。就算天再高又怎样，踮起脚尖就更接近阳光。这里有速度，有激情，更有一群志同道合的人。。</p>
+			</div>
+		</li>
+		<li>
+		
+			<div class="content_block">
+				<a href="#"><img src="img/nav/qw-3.jpg" alt="" /></a>
+				<h2><a href="#">梦想</a></h2>
+				<p>Nothing is impossible to a willing heart！长风破浪会有时，直挂云帆济沧海。就算天再高又怎样，踮起脚尖就更接近阳光。这里有速度，有激情，更有一群志同道合的人。。</p>
+			</div>
+		</li>
+		<li>
+			<div class="content_block">
+		
+				<a href="#"><img src="img/nav/qw-6.jpg" alt="" /></a>
+				<h2><a href="#">大城院</a></h2>
+				<p>Nothing is impossible to a willing heart！长风破浪会有时，直挂云帆济沧海。就算天再高又怎样，踮起脚尖就更接近阳光。这里有速度，有激情，更有一群志同道合的人。</p>
+			</div>
+		</li>
+		<li>
+			<div class="content_block">
+				<a href="#"><img src="img/nav/qw-1.jpg" alt="" /></a>
+		
+				<h2><a href="#">陪伴</a></h2>
+				<p>Nothing is impossible to a willing heart！长风破浪会有时，直挂云帆济沧海。就算天再高又怎样，踮起脚尖就更接近阳光。这里有速度，有激情，更有一群志同道合的人。.</p>
+			</div>
+		</li>
+		<li>
+			<div class="content_block">
+				<a href="#"><img src="img/nav/qw-3.jpg" alt="" /></a>
+				<h2><a href="#">感激</a></h2>
+		
+				<p>Where there is a will, there is a way.城院，这个梦开始的地方。任我们展翅飞翔，谁说那只是天真的预言。走进城院，让理想抒写灿烂的诗篇，让我们走向成功！。</p>
+			</div>
+		</li>
+		<li>
+			<div class="content_block">
+				<a href="#"><img src="img/nav/qw-1.jpg" alt="" /></a>
+				<h2><a href="#">飞扬</a></h2>
+				<p>Where there is a will, there is a way.城院，这个梦开始的地方。任我们展翅飞翔，谁说那只是天真的预言。走进城院，让理想抒写灿烂的诗篇，让我们走向成功！。</p>
+			</div>
+		</li>
+		<li>
+			<div class="content_block">
+				<a href="#"><img src="img/nav/qw-5.jpg" alt="" /></a>
+				<h2><a href="#">同路人</a></h2>
+				<p>我们的祖国经历了多少的风风雨雨，多少的困难与坎坷，但是我们的祖国还是挺过来了，
+因为我们的祖国坚信——科技不仅改变命运，还可改变未来。催征的战鼓已经敲响了，
+让我们携手向前，再向前；让科技离我们近些,让我们把科技推得高些，更高些……。</p>
+			</div>
+		</li>
+	</ul>
+</div>
+				<br>理想如果是笃诚而又持之以恒的话，必将极大地激发蕴藏在你的体内的巨大潜能，<br>这将使你冲破一切困难和险阻，达到成功的目标。<br>
+				<br>心灵中那颗稚嫩的小苗逐渐成长，向着所期待的净土不断延伸，我知道，它一定会开花，结出美丽的果实。<br>知识的路使梦想的车日日前进，我正在前进着，既然有了目标，<br>就克服一切困难向前走吧，因为我坚信，我的未来不是梦。</p>
+				<div class="paralasic paralasic-demo" data-paralasic="1.5"></div>
+				<p>有谁没有梦想，有谁不愿爬上梦想的峰巅？可又有几人梦圆，又有几人的梦想不被残酷的现实压成粉末，随风飘远？<br>没有梦想，我们的心灵是残缺的；梦想断了，无异于幻想，只能编织一段伤心的记忆。<br>所以梦想的高度，须你抬头可见，然后执着地攀登；梦想的距离，不要超出视角，然后努力地靠近。.<br>
+			梦想是什么，我想它并不是一种实实在在地物质，也不是一种虚假的梦，更不是一种内心欲望的膨胀，<br>而是看不见摸不着而又最真实的一种心灵的追求，而生命因有这种追求增添了动力，生活因有这种追求多了几分光彩！.<br>
+					梦想<div class="well">
+	<div class="well-item">
+		<div class="correct"><img  class="" src="img/icon/3.jpg" /></div>
+		<div class="opposite">
+			<div class="">
+				<div class="opposite-content">
+					<div class="opposite-content-text">
+					放飞青春
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="well-item">
+		<div class="correct"><img  class="" src="img/icon/2.jpg" /></div>
+		<div class="opposite">
+			<div class="">
+				<div class="opposite-content">
+					<div class="opposite-content-text">
+						追逐梦想
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="well-item">
+		<div class="correct"><img  class="" src="img/icon/4.jpg" /></div>
+		<div class="opposite">
+			<div class="">
+				<div class="opposite-content">
+					<div class="opposite-content-text">
+						让梦想前进
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="well-item">
+		<div class="correct"><img  class="" src="img/icon/icon-3.png" /></div>
+		<div class="opposite">
+			<div class="">
+				<div class="opposite-content">
+					<div class="opposite-content-text">
+						这里是大城院！
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</div>
+				<p><br> 我要感谢梦想，是她让我有了前进的动力。将欲渡黄河冰塞川，<br>将登太行雪满山抛至九宵云外。梦想就在前面，尽力地追者梦的光点，不管有多少阻挠。<br>在实现梦想时，不要放弃，不遇岛屿与暗礁，难以激起美丽的浪花。保持心中梦想的光芒，<br>成为照亮心灵的月亮，让感动的泪花洗过脸庞。蓝天不会终究是黑夜，人生不会终究是雨天。</p>
+			</div>
+		</div>
+		<div class="related">
+		    <h3>如果你喜欢追求，那么你一定有自己的梦想:</h3>
+		    <div style="float: left; width: 600px;height: 500px;color:  #dfd1b5;font-size: 20px;">小鸟的梦想是飞向蓝天；鱼儿的梦想是畅游大海；骏马的梦想是在一望无际的大草原上飞奔；秋姑娘的梦想是让田野永远硕果累累……
+
+那么，我的梦想是什么呢？每个人都有自己的梦想，可能有些人的梦想很简单，有些人的梦想很复杂。但是我相信只要自己努力了，就一定会成功的，上帝是公平的，有多少付出就会有多少收获。
+
+梦想的路上注定是孤独，困难的，而我的梦想就是做一位家喻户晓的文学创作者，也许我的这个梦想真的是很难很难，同时也没有家人的支持，可以说我的追梦路程真的是很困难，但是我不会放弃，因为我知道一旦放弃了，我就必定会懊悔终生，即使我会失败，即使我会失败很多次，但是我依然相信我会成功的。梦想的路上也许会有嘲笑，也许会有失败，也许会有困难，也许会有失望……但是我都不会放弃，即使失败了，我依然会微笑，然后从新开始。一个人如果连梦想都放弃了，那么这个人活在这个世界上就没有什么意义了吧，我的人生不要没有意义，我要实现我的梦想！
+
+梦想，一个很美丽的词语，我为梦想付出了那么多，很多人会说不值得，但是。等到成功的那一刻，什么付出都值得了！</div>
+ <div style="float: right; position: relative; bottom: 100%; width: 600px;height: 500px;color: #dfd1b5;font-size: 20px;font-family: 楷体；">如果你的信念还站立的话，那么没有人能使你倒下。
+
+——马丁·路德金
+
+蝶在沉默了一冬之后，积蓄了全身的力量，终于把飞的梦想变成现实；依米花在沉默了五年之后，爆发了自己毕生的心血，终于把花的芬芳吐露给大家。坚定信念，放飞梦想，你就主宰了自己的世界。
+
+“天将降大任于是人也，必先苦其心志，劳其筋骨，饿其体肤，空乏其身……”孙膑在忍受了挖去膝骨的酷刑之后，忍耐着、坚持着，执着地用心完成一部流传千古的兵书《孙膑兵法》。孙膑，有多少人为你的学富五车所折服，有多少人被你的智谋所吸引。你在沉默中靠着坚定的信念，把自己的梦想放飞到蓝天中。放飞梦想，别忘了你的坚定信念！树立信念，放飞梦想，你将能随它一起到达美丽的地方。树立信念，放飞梦想，你将会拥有一个更加灿烂的明天。让梦想飞翔，让信念开花。从远处随便拈来一朵云彩，将旅途的脚步停歇，只为追寻，那初生的阳光而不曾停下脚步。
+
+旅途的劳顿充斥着艰辛，但是心灵的追寻却不曾停止。固有夸父追日，累到沧海变幻乱世桃园。
+</div>
+		  	<section class="main">
+
+				<div class="windy-demo windy-demo-2" style="color: black;">
+					<ul id="wi-el" class="wi-container">
+						<li><img src="img/food/f-19.jpg" alt="image1"/><h4>努力</h4></li>
+						<li><img src="img/food/f-8.jpg" alt="image2"/><h4>青春</h4></li>
+						<li><img src="img/food/f-12.jpg" alt="image3"/><h4>放飞</h4></li>
+						<li><img src="img/food/f-13.jpg" alt="image4"/><h4>梦想</h4></li>
+						<li><img src="img/food/f-3.jpg" alt="image5"/><h4>向上</h4></li>
+						<li><img src="img/food/f-15.jpg" alt="image6"/><h4>起航</h4></li>
+							<li><img src="img/food/f-2.jpg" alt="image1"/><h4>努力</h4></li>
+						<li><img src="img/food/f-5.jpg" alt="image2"/><h4>青春</h4></li>
+						<li><img src="img/food/f-18.jpg" alt="image3"/><h4>放飞</h4></li>
+						<li><img src=img/food/f-2.jpg" alt="image4"/><h4>梦想</h4></li>
+						<li><img src="img/food/f-13.jpg" alt="image5"/><h4>向上</h4></li>
+						<li><img src="img/food/f-13.jpg" alt="image6"/><h4>起航</h4></li>
+					<li><img src="img/food/f-19.jpg" alt="image1"/><h4>努力</h4></li>
+						<li><img src="img/food/f-8.jpg" alt="image2"/><h4>青春</h4></li>
+						<li><img src="img/food/f-12.jpg" alt="image3"/><h4>放飞</h4></li>
+						<li><img src="img/food/f13.jpg" alt="image4"/><h4>梦想</h4></li>
+						<li><img src="img/food/f-3.jpg" alt="image5"/><h4>向上</h4></li>
+						<li><img src="img/food/f-15.jpg" alt="image6"/><h4>起航</h4></li>
+							<li><img src="img/food/f-2.jpg" alt="image1"/><h4>努力</h4></li>
+						<li><img src="img/food/f-5.jpg" alt="image2"/><h4>青春</h4></li>
+						<li><img src="img/food/f-18.jpg" alt="image3"/><h4>放飞</h4></li>
+						<li><img src=img/food/f-2.jpg" alt="image4"/><h4>梦想</h4></li>
+						<li><img src="img/food/f-13.jpg" alt="image5"/><h4>向上</h4></li>
+						<li><img src="img/food/f-13.jpg" alt="image6"/><h4>起航</h4></li>
+							<li><img src="img/food/f-18.jpg" alt="image1"/><h4>努力</h4></li>
+						<li><img src="img/food/f-19.jpg" alt="image1"/><h4>努力</h4></li>
+						<li><img src="img/food/f-8.jpg" alt="image2"/><h4>青春</h4></li>
+						<li><img src="img/food/f-12.jpg" alt="image3"/><h4>放飞</h4></li>
+						<li><img src="img/food/f-13.jpg" alt="image4"/><h4>梦想</h4></li>
+						<li><img src="img/food/f-3.jpg" alt="image5"/><h4>向上</h4></li>
+						<li><img src="img/food/f-15.jpg" alt="image6"/><h4>起航</h4></li>
+							<li><img src="img/food/f-2.jpg" alt="image1"/><h4>努力</h4></li>
+						<li><img src="img/food/f-5.jpg" alt="image2"/><h4>青春</h4></li>
+						<li><img src="img/food/f-18.jpg" alt="image3"/><h4>放飞</h4></li>
+						<li><img src=img/food/f-2.jpg" alt="image3"/><h4>梦想</h4></li>
+						<li><img src="img/food/f-13.jpg" alt="image5"/><h4>向上</h4></li>
+						<li><img src="img/food/f-13.jpg" alt="image6"/><h4>起航</h4></li>
+							<li><img src="img/food/f-18.jpg" alt="image1"/><h4>努力</h4></li>
+					</ul>
+					<nav>
+						<span id="nav-prev">prev</span>
+						<span id="nav-next">next</span>
+					</nav>
+				</div>
+				<p class="info" style="font-size: 13px;"><strong>Tip:</strong>这是一个追梦的季节，这是一个让梦想起航的地方，这是一个让我们奋发的年龄.</p>
+			</section>
+			
+        </div>
+        <div class="Copyright" style="text-align: center; color: yellow;">
+     <ul>
+       <a href="#">帮助中心</a>&nbsp;<a href="#">客服中心</a>&nbsp;<a href="#">意见反馈</a>&nbsp;<a href="#">联系我们</a>
+     </ul>
+     <div style="font-size: 4em;width: 100%;height: 10%;">我的梦想起航&大城院<br>20岁不努力，30岁只会让你成为一个又老10岁的穷人，所以此刻努力追梦吧！</div>
+   </div>
+ </footer>
+	<div style="color: white;text-align: center;">
+<br><i>广西城市职业学院 版权所有</i><br>
+<i>电话：0771-7515030地址：广西南宁空港经济区同正大道339号 广西崇左市江州区石景林街道（崇左校区）</i></div>
+	
+	
+	<script>
+$(function(){
+	var $animate = $('#animate');
+	var $opposite = $('#opposite');
+	$(".wrap").hover(function(){
+		$animate.removeClass();
+		$opposite.removeClass();
+		$animate.addClass("test");
+		$opposite.addClass('test2');
+	},function(){
+		$animate.removeClass();
+		$opposite.removeClass();
+		$animate.addClass("test2");
+		$opposite.addClass('test');
+	});
+
+	$(".well-item").hover(function(){
+		$(this).find(".correct").children().removeClass();
+		$(this).find(".opposite").children().removeClass();
+		$(this).find(".correct").children().addClass("test");
+		$(this).find(".opposite").children().addClass('test2');
+	},function(){
+		$(this).find(".correct").children().removeClass();
+		$(this).find(".opposite").children().removeClass();
+		$(this).find(".correct").children().addClass("test2");
+		$(this).find(".opposite").children().addClass('test');
+	});
+
+});
+</script>
+	 <script src="js/index.js"></script>
+</body>
+</html>
+
+        <script type="text/javascript" src="js/jquery.windy.js"></script>
+        <script type="text/javascript">	
+			$(function() {
+
+				var $el = $( '#wi-el' ),
+					windy = $el.windy( {
+						// rotation and translation boundaries for the items transitions
+						boundaries : {
+							rotateX : { min : 40 , max : 90 },
+							rotateY : { min : -15 , max : 45 },
+							rotateZ : { min : -10 , max : 10 },
+							translateX : { min : -400 , max : 400 },
+							translateY : { min : -400 , max : 400 },
+							translateZ : { min : 350 , max : 550 }
+						}
+					} ),
+					allownavnext = false,
+					allownavprev = false;
+
+				$( '#nav-prev' ).on( 'mousedown', function( event ) {
+
+					allownavprev = true;
+					navprev();
+				
+				} ).on( 'mouseup mouseleave', function( event ) {
+
+					allownavprev = false;
+				
+				} );
+
+				$( '#nav-next' ).on( 'mousedown', function( event ) {
+
+					allownavnext = true;
+					navnext();
+				
+				} ).on( 'mouseup mouseleave', function( event ) {
+
+					allownavnext = false;
+				
+				} );
+
+				function navnext() {
+					if( allownavnext ) {
+						windy.next();
+						setTimeout( function() {	
+							navnext();
+						}, 150 );
+					}
+				}
+
+				function navprev() {
+					if( allownavprev ) {
+						windy.prev();
+						setTimeout( function() {	
+							navprev();
+						}, 150 );
+					}
+				}
+
+			});
+		</script>

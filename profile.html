@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>放飞梦想</title>
+	<meta name="keywords" content="广西城市职业学院是一所经广西壮族自治区人民政府批准，国家教育部备案，由广西教育厅主管，具有独立颁发国家承认学历文凭资格的新型的综合性高校">
+	<meta name="description" content="工业机器人技术、无人机应用专业，工业设计（3D打印技术）、产品艺术设计、新能源汽车、学前教育建设工程管理、汽车检测与维修技术等54个专业，涉及经济、文学、理学、管理、外语、艺术等学科门类。">
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+	<link rel="stylesheet" href="css/home.css">
+	<link rel="stylesheet" href="css/icon.css">
+	<style type="text/css">
+		#img {
+			position:relative;top:30px;
+	width:503px;
+	height:252px;
+	margin:50px auto;
+	perspective:700px;
+	-webkit-perspective:700px;
+}
+#img img {
+	width:50px;
+	height:50px;
+	float:left;
+}
+#btn {
+	width:100px;
+	height:40px;
+	line-height:40px;
+	text-align:center;
+	font-size:16px;
+	color:#000;
+	background:#0fc;
+	border-radius:5px;
+	margin:0 auto;
+	padding:0px 0px;
+	cursor:pointer;
+}
+	</style>
+	<script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?05e4a554b37e54a1436450128ce7173c";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+	</script>
+	<script type="text/javascript">
+		
+window.onload = function() {
+    var btn = document.getElementById('btn');
+    var imgs = document.getElementsByTagName("img");
+    var on = true;
+
+    btn.onclick = function() {
+        if (!on) {
+            return;
+        }
+        on = false;
+        var endNum = 0; //运动完成的图片数量
+        for (var i = 0; i < imgs.length; i++) {
+            (function(i) {
+                setTimeout(function() {
+                    montion(imgs[i], '1s', function() {
+                        this.style.transform = 'scale(0)';
+                    }, function() {
+                        montion(this, "1s", function() {
+                            this.style.transform = 'scale(1)';
+                            this.style.opacity = '0';
+                        }, function() {
+                            endNum++;
+                            if (endNum == imgs.length) {
+                                toBig();
+                            }
+                        })
+                    })
+                }, Math.random() * 1000);
+            })(i)
+        }
+
+
+    };
+
+    //第三个效果
+    function toBig() {
+        /*
+            坐标轴（X，Y,z）
+        */
+        var allEnd = 0;
+        for (var i = 0; i < imgs.length; i++) {
+            imgs[i].style.transition = "";
+            imgs[i].style.transform = 'rotateY(0deg) translateZ(-' + Math.random() * 500 + 'px)';
+            (function(i) {
+                setTimeout(function() {
+                    montion(imgs[i], '2s', function() {
+                        this.style.opacity = 1;
+                        this.style.transform = 'rotateY(-360deg) translateZ(0)';
+                    }, function() {
+                        allEnd++;
+                        if (allEnd == imgs.length) {
+                            on = true;
+                        }
+                    });
+                }, Math.random() * 1000);
+            })(i)
+        }
+    }
+
+    //运动函数（运动的对象，时间，属性函数，回调）
+    function montion(obj, time, doFn, callBack) {
+        obj.style.transition = time;
+        doFn.call(obj); //调用函数，并把this的指向给obj
+        var called = false
+        obj.addEventListener('transitionend', function() {
+            if (!called) {
+                callBack && callBack.call(obj);
+                called = true;
+            }
+        }, false);
+    }
+}
+	</script>
+</head>
+<body>
+<!-- Header -->
+<header id="header" class="">
+	<div class="container">
+		<div class="global-nav">
+			<button class="navbar-toggle">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="brand" href="index.html">起航地</a>
+			<nav class="navbar">
+				<ul class="nav">
+					<li>
+						<a href="index.html" class="home-current">首页</a>
+					</li>
+					<li class="">
+						<a href="food.html">精彩校园</a>
+					</li>
+					<li class="">
+						<a href="join.html">燃梦校园</a>
+					</li>
+					<li class="active">
+						<a href="profile.html">起航历程</a>
+					</li>
+					<li class="">
+						<a href="about.html">飞吧梦想</a>
+					</li>
+					<li class="">
+						<a href="new4.html">梦想足迹</a>
+					</li>
+					<li class="pc-nav-char">
+						<a href="activity.html">同路人</a>
+					</li>
+					<li class="">
+						<a href="tupian.html">旋转梦想</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</header>
+<br><br><br>
+
+<div id="img">
+    <img src="img/icon/1.jpg" alt="">
+    <img src="img/icon/2.jpg" alt="">
+    <img src="img/icon/3.jpg" alt="">
+    <img src="img/icon/4.jpg" alt="">
+    <img src="img/icon/1.jpg" alt="">
+    <img src="img/icon/1.jpg" alt="">
+    <img src="img/icon/2.jpg" alt="">
+    <img src="img/icon/3.jpg" alt="">
+    <img src="img/icon/4.jpg" alt="">
+    <img src="img/icon/1.jpg" alt="">
+    <img src="img/icon/2.jpg" alt="">
+    <img src="img/icon/3.jpg" alt="">
+    <img src="img/icon/4.jpg" alt="">
+    <img src="img/icon/1.jpg" alt="">
+    <img src="img/icon/2.jpg" alt="">
+    <img src="img/icon/3.jpg" alt="">
+    <img src="img/icon/4.jpg" alt="">
+    <img src="img/icon/3.jpg" alt="">
+    <img src="img/icon/2.jpg" alt="">
+    <img src="img/icon/3.jpg" alt="">
+    <img src="img/icon/4.jpg" alt="">
+    <img src="img/icon/3.jpg" alt="">
+    <img src="img/icon/1.jpg" alt="">
+    <img src="img/icon/2.jpg" alt="">
+    <img src="img/icon/3.jpg" alt="">
+    <img src="img/icon/2.jpg" alt="">
+    <img src="img/icon/4.jpg" alt="">
+    <img src="img/icon/2.jpg" alt="">
+    <img src="img/icon/1.jpg" alt="">
+    <img src="img/icon/3.jpg" alt="">
+    <img src="img/icon/1.jpg" alt="">
+    <img src="img/icon/2.jpg" alt="">
+    <img src="img/icon/3.jpg" alt="">
+    <img src="img/icon/4.jpg" alt="">
+    <img src="img/icon/1.jpg" alt="">
+    <img src="img/icon/2.jpg" alt="">
+    <img src="img/icon/1.jpg" alt="">
+    <img src="img/icon/1.jpg" alt="">
+    <img src="img/icon/3.jpg" alt="">
+    <img src="img/icon/4.jpg" alt="">
+    <img src="img/icon/2.jpg" alt="">
+    <img src="img/icon/1.jpg" alt="">
+    <img src="img/icon/3.jpg" alt="">
+    <img src="img/icon/1.jpg" alt="">
+    <img src="img/icon/2.jpg" alt="">
+    <img src="img/icon/4.jpg" alt="">
+    <img src="img/icon/2.jpg" alt="">
+    <img src="img/icon/3.jpg" alt="">
+    <img src="img/icon/1.jpg" alt="">
+    <img src="img/icon/3.jpg" alt="">
+</div>
+<div id="btn">梦想引路人</div>
+<!-- Product -->
+<section id="" class="Talents profile">
+	<div class="container profile-color">
+		<div class="item-title">
+			<h1>放飞梦想</h1>
+
+		</div>
+
+		<div class="profile-text">
+			<p>青春,流露着浓浓的诗情画意；青春,散发出淡淡的清香幽情.青春里拥有难以忘怀的篇目,也有不堪回首的章节.对拥有青春的你,我将送你一句话：青春是生命之晨,是日之黎明,要珍惜自己的青春,不要轻言放弃,让你的青春绽放出一样的光彩.所谓有缘千里来相会，无缘对面难牵手。缘分这东西真的很奇妙，我们因梦想走在了一起。这里没有童话般的憧憬，却能让我们的梦想起航。踏进城院，这里没有三生三世，却能陪伴我们三年的青春时光，放飞我们的青春梦想。这里是陪伴我们三年高颜值高内涵的家。因为有你，前行路上不寂寞。在这里，我们成了一家人。当走进城院，走进逐羊景区，遥想刘沛公长亭梦逐羊，坚定主人翁精神，放飞自我，找准自己的位置，成为能主宰自己命运的人。</p>
+
+			<p>我们有梦，我们有追求，我们有陪伴我们追梦的地方-广西城市职业学院。当我们怀着对未来的憧憬，踏进城院那天，天空晴朗，心情雀跃，漫天都是一碧如洗的颜色，曾记得甜蜜又痛苦的军训接踵而来，晴空下的我们，记忆中又迷彩的颜色，更有那一片蔚蓝。这里有社团，课业，实践.....忙碌而充实的大学生活，前行路上，并不孤单，闲暇时刻，抬头仰望，鲜花，映出最美的蓝天。城院陪我们度过了无数个日月，城院的天空见证了我们无数的喜怒哀乐，我们也见证了城院的无数变化。这里有小巧但五脏俱全的无人机，这里有引爆舌尖的美食，这里有影响未来的汽车科技，这里有.......</p>
+
+			<p>最美的不是下雨天，是和你一起读过的大学，一起在起航地刚飞的青春梦想。让我们放飞青春的梦想，让梦想插上拼搏的翅膀，奋力振翅，迎上风雨。飞向蓝天，让最初的梦想成真！这是属于你的大学，这也是属于大家的家，我们张开怀抱期待着与你在这梦想的起航地放飞我们的清除，书写我们的人生，守护自然的美景，分享温暖的陪伴，这里是广西城市职业学院！关于它的美几天几夜都无法说完。待明天，晨光熹微，我们一起看朝霞漫天吧！</p>
+		</div>
+	</div>
+</section>
+
+<!-- News -->
+<section class="profile profile-s">
+	<div class="item-title">
+		<h1 style="color:#cd172c">大事记</h1>
+	</div>
+	<div>
+		<div class="container">
+
+			<div id="timeline">
+				<div class="timeline-item">
+					<div class="timeline-icon">
+						<img src="img/icon/icon-time.png" alt="">
+						<span><a href="#">2005</a></span>
+					</div>
+					<div class="timeline-content right">
+						<h2>城院闪亮登场</h2>
+					</div>
+				</div>
+
+				<div class="timeline-item">
+					<div class="timeline-icon">
+						<img src="img/icon/icon-time.png" alt="">
+						<span><a href="#">2006</a></span>
+					</div>
+					<div class="timeline-content right"></div>
+				</div>
+
+				<div class="timeline-item">
+					<div class="timeline-icon timeline-icon-s">
+						<img src="img/icon/icon-time-s.png" alt="">
+					</div>
+					<div class="timeline-content timeline-content-s text-right">
+						<h2><a href="#">2007</a></h2>
+						<p>外国语分院举办了第一届美食节<br>为学院推行特色教育开拓了新的发展领域</p>
+					</div>
+				</div>
+
+				<div class="timeline-item">
+					<div class="timeline-icon">
+						<img src="img/icon/icon-time.png" alt="">
+						<span><a href="#">2008</a></span>
+					</div>
+					<div class="timeline-content right">
+						<p>首届“城院之星”总决赛隆重举行。</p></div>
+				</div>
+
+				<div class="timeline-item">
+					<div class="timeline-icon timeline-icon-s">
+						<img src="img/icon/icon-time-s.png" alt="">
+					</div>
+					<div class="timeline-content right  timeline-content-s">
+						<h2><a href="#">2009</a></h2>
+						<p>我院在明德楼西侧隆重举行了“文化百家林” 揭幕仪式。</p>
+					</div>
+				</div>
+
+				<div class="timeline-item">
+					<div class="timeline-icon">
+						<img src="img/icon/icon-time.png" alt="">
+						<span><a href="#">2010</a></span>
+					</div>
+					<div class="timeline-content text-right">
+						<h2>学院教务处在图书馆后馆自习室内举行首届图书展览会</h2>
+					</div>
+				</div>
+
+				<div class="timeline-item">
+					<div class="timeline-icon">
+						<img src="img/icon/icon-time.png" alt="">
+						<span><a href="#">2012</a></span>
+					</div>
+					<div class="timeline-content right">
+						<h2>我院喜获“2011年度全区学生资助工作先进单位”称号。</h2>
+					</div>
+				</div>
+
+				<div class="timeline-item">
+					<div class="timeline-icon timeline-icon-s">
+						<img src="img/icon/icon-time-s.png" alt="">
+					</div>
+					<div class="timeline-content timeline-content-s text-right">
+						<h2><a href="#">2015</a></h2>
+						<p>我院与四川成都睿峰集团公司联合建立广西首个苹果IOS特色培训班。</p>
+					</div>
+				</div>
+
+				<div class="timeline-item">
+					<div class="timeline-icon">
+						<img src="img/icon/icon-time.png" alt="">
+						<span><a href="#">2016</a></span>
+					</div>
+					<div class="timeline-content right">
+						<h2>广西城市职业学院崇左校区项目开工</h2>
+					</div>
+				</div>
+
+				<div class="timeline-item">
+					<div class="timeline-icon">
+						<img src="img/icon/icon-time.png" alt="">
+						<span><a href="#">2017</a></span>
+					</div>
+					<div class="timeline-content text-right">
+						<h2>城院学子搬入崇左新校区（我们的新家很美哦）</h2>
+					</div>
+				</div>
+
+				<div class="timeline-item" style="margin-bottom:0">
+					<div class="timeline-icon">
+						<img src="img/icon/icon-time.png" alt="">
+						<span><a href="#">未来</a></span>
+					</div>
+					<div class="timeline-content right">
+						<h2>这是精彩不断，我们在这等你哦</h2>
+					</div>
+				</div>
+
+
+			</div>
+
+		</div>
+	</div>
+</section>
+<!-- Footer -->
+<footer id="footer">
+	<div class="container">
+		<div class="copy">广西城市职业学院 版权所有
+		</div>
+		<div class="copy">
+			
+Copyright 2005-2016  <span>地址：广西南宁空港经济区同正大道339号&nbsp;广西崇左市江州区石景林街道（崇左校区）</span>
+		</div>
+	</div>
+</footer>
+
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="js/banner.js"></script>
+<script src="js/navbar.js"></script>
+<script src="js/web.core.js"></script>
+<script src="js/web.adtabs.js"></script>
+<script src="js/web.subnav.js"></script>
+<script src="js/web.ui.js"></script>
+</body>
+</html>
